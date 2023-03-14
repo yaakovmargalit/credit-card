@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+        }
+        #myIframe{
+            height: 100%;
+            background-color: transparent;
+            width: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body onload="onload()">
+    <iframe id="myIframe" src="" ></iframe>
+</body>
+<script>
+    function onload(){
+        const queryParams = new URLSearchParams(window.location.search)
+        console.log(queryParams);
+            document.getElementById('myIframe').src = queryParams.get('url')
+    }
+</script>
+</html>
